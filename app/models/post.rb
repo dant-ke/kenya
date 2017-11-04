@@ -1,4 +1,4 @@
-class Post < Activerecord::Base 
+class Post < ActiveRecord::Base 
 	belongs_to :category
 	validates :title, :content, :category_id, presence: true
 end
