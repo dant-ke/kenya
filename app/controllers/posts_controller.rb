@@ -33,8 +33,10 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		 @post.destroy
+		if @post.destroy
 		 redirect_to root_path, notice: “Post destroyed”
+		else
+			flash[:alert] = "Error updating post!"
 	end
 private
     def post_params
